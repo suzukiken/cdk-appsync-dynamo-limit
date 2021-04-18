@@ -1,0 +1,21 @@
+type Product {
+  id: ID!
+  title: String!
+}
+type PaginatedProducts {
+  products: [Product!]!
+  nextToken: String
+}
+type Query {
+  getProduct(id: ID!): Product
+  listProducts(count: Int, nextToken: String): PaginatedProducts
+  listProductsByTitle(title: String!, count: Int, nextToken: String): PaginatedProducts
+}
+input ProductInput {
+  title: String!
+}
+type Mutation {
+  addProduct(input: ProductInput!): Product
+}
+
+

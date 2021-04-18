@@ -1,0 +1,20 @@
+{
+  "version" : "2017-02-28",
+  "operation" : "Query",
+  "index" : "titleIndex",
+  "consistentRead" : false,
+  "query" : {
+    "expression" : "title = :title",
+    "expressionValues" : {
+      ":title" : $util.dynamodb.toDynamoDBJson($context.arguments.title)
+    }
+  },
+  #if( ${context.arguments.count} )
+    "limit": $util.toJson($context.arguments.count)
+  #else
+    "limit" : 5
+  #end
+  #if( ${context.arguments.nextToken} )
+    , "nextToken": $util.toJson($context.arguments.nextToken)
+  #end
+}
