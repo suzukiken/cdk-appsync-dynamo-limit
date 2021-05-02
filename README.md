@@ -5,4 +5,4 @@ To deploy AppSync and Dynamo DB tables. AppSync GraphQL API limit records and re
 * `npm install`
 * `cdk deploy`
 
-[description](https://figmentresearch.com/aws/cdkappsync-dynamo-limit)
+[description](https://note.figmentresearch.com/aws/cdkappsync-dynamo-limit)
